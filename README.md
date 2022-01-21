@@ -1,48 +1,70 @@
-# Ice Cream Challenge
+# Getting Started with Create React App
 
-The challenge is intended for candidates interviewing for the fullstack software development role at PointCare.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Get Started
+## Available Scripts
 
-1. Clone this repository
-2. Create your feature branch off of main
-3. Build feature based on the requirements below
-4. Create a pull request when you're done
+In the project directory, you can run:
 
-## Feature
+### `npm start`
 
-As an ice cream parlor owner, in order to better understand my business, I provide free ice cream in exchange for customer feedback.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Requirements
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Our customer is the ice cream parlor. You are to build a Node.js app that allows customers of the ice cream parlor to redeem a free scoop of ice cream in exchange for completing a questionnaire. This requirement fulfills the interaction between the ice cream parlor customer and the web application.
+### `npm test`
 
-- [ ] Web application must be publically available on the internet
-- [ ] Repo must have a file containing a QR Code (e.g. jpg, svg) to kick off the workflow
-- [ ] Complete acceptance criteria below
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Example Scenario
+### `npm run build`
 
-Wendy is walking by an ice cream parlor and sees a sign in the window that reads "Scan QR code to redeem a free scoop of ice cream!". Wendy takes out her phone, points the camera at the QR code and is redirected to a website. The website prompts wendy to complete a questionnaire in order to receive a free scoop. At the end of the questionnaire, Wendy is prompted for her phone number. Moments later she receives a text message containing her claim code. Wendy walks into the ice cream parlor, shows the code to the clerk, then receives her free scoop of ice cream.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Acceptance Criteria
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- [ ] 1. On mobile phone, when user scans QR code with camera app then website is opened in browser and `home` page is rendered as:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-  ![home](/1-home.png)
+### `npm run eject`
 
-- [ ] 2. On `home` page, when user clicks the "yes" button, then `question` page is rendered as:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-  ![question](/2-question.png)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- [ ] 3. On `question` page, when user selects an ice cream, then `send-code` page is redered as:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-  ![send-code](/3-send-code.png)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- [ ] 4. On `send-code` page, when user submits their phone number, then user receives unique claim code via SMS and the `success` page is rendered as:
+## Learn More
 
-  ![success](/4-success.png)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- [ ] 5. On `send-code` page, when user submits their phone number, but already submitted in a previous interaction, then `already-sent` page is rendered as:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-  ![already-sent](/5-already-sent.png)
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
