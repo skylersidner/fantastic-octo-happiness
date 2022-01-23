@@ -1,0 +1,12 @@
+.flavor-container {
+    display:flex;
+    justify-content: space-around;
+    height: 180px;
+    width: 360px;
+}
+
+.flavor-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

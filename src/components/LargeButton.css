@@ -1,0 +1,11 @@
+.large-btn {
+    width: 200px;
+    border: solid black 1px;
+    padding: 8px;
+    font-size: 1.5rem;
+    
+    display: flex;
+    justify-content: center;
+
+    font-weight: bold;
+}
