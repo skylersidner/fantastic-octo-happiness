@@ -1,0 +1,9 @@
+# API
+api/.env
+api/node_modules
+
+# UI
+build
+.env
+node_modules
+
