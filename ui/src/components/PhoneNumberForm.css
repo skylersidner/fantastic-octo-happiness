@@ -2,6 +2,12 @@
     font-size: 1.2rem;
     margin-bottom: 16px;
 }
+.phone-number-input:focus {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    outline: none;
+}
+
 .invalid-number {
     font-style: italic;
     margin-top: -14px;
