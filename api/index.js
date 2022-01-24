@@ -79,7 +79,7 @@ const resolvers = {
             try {
                 const message = await client.messages
                     .create({
-                        body: `FREESCOOP${phoneNumbersList.length}`,
+                        body: `Your free ice cream code is: \nFREESCOOP${phoneNumbersList.length}`,
                         to: `+1${phoneNumber}`, // Text this number
                         from: twilioPhoneNumber, // From a valid Twilio number
                     });
