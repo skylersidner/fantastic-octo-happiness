@@ -25,6 +25,7 @@ ReactDOM.render(
       <Router>
         <Routes>
           <Route path="/" element={<ApolloProvider client={client}><App /></ApolloProvider>}>
+            <Route index element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="question" element={<Question />} />
             <Route path="send-code" element={<SendCode />} />
