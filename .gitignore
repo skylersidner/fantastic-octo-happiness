@@ -3,7 +3,8 @@ api/.env
 api/node_modules
 
 # UI
-build
-.env
-node_modules
+ui/build
+ui/.env
+ui/node_modules
 
+.idea
