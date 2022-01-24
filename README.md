@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Ice Cream Survey App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created as part of a programming challenge. Includes:
+* UI component
+* API component
+* QR code image which will take the user to a publicly hosted version of the app
+* The initial requirements for the challenge
 
-## Available Scripts
+Uses React, ApolloGraphQL (for server/client requests), Twillio (for SMS texting),
+ [hosted on Heroku](https://fantastic-octo-happiness-ui.herokuapp.com/).
 
-In the project directory, you can run:
+## API
 
-### `npm start`
+Uses [ApolloServer](https://www.apollographql.com/docs/apollo-server/) from ApolloGraphQL.
+ The [Twilio Node library](https://www.twilio.com/docs/libraries/node) is used to send SMS messaging,
+ which requires an active account with a verified number to send messages from.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Local Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run `npm i` to install dependencies. Requres a `.env` file in the API directory with your Twilio
+ credentials and verified phone number which needs to be  in [E.164 format](https://www.twilio.com/docs/glossary/what-e164) (e.g. +19999999999):
+```bash
+TWILIO_ACCOUNT_SID=<your twilio account SID>
+TWILIO_AUTH_TOKEN=<your twilio account auth token>
+TWILIO_PHONE_NUMBER=<your twilio verified number>
+PORT=<optional; defaults to 4000>
+```
+Run `npm start` to start the application on [http://localhost:4000](http://localhost:4000); visiting this
+ url in the browser will present you with the Apollo sandbox explorer tool.
 
-### `npm test`
+### Deploying to Heroku
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Set up Config Vars for environment variables under "Settings" in your Heroku app.
 
-### `npm run build`
+Create a remote aimed at your heroku-api app; this can be done via the [Heroku CLI tool](https://devcenter.heroku.com/articles/git)
+ though you will need to rename it to something other than `heroku` to distinguish it from the UI remote:
+```bash
+heroku git:remote -a <your-app-name>
+git remote rename heroku heroku-API
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Or do it via git if you have the Heroku git URI for your app:
+```bash
+git remote add heroku-API <your-heroku-app-git-repo-uri>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then push using the [subtree strategy](https://gist.github.com/SKempin/b7857a6ff6bddb05717cc17a44091202)
+ to deploy only the UI directory:
+```bash
+git subtree push --prefix api heroku-api master
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## UI
 
-### `npm run eject`
+Created with [Create React App](https://github.com/facebook/create-react-app). Uses
+ [ApolloClient](https://www.apollographql.com/docs/react/) from ApolloGraphQL for requests with the API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Local Development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run `npm i` to install dependencies. Requres a `.env` file in the ui directory pointed
+ at your local API instance:
+```bash
+REACT_APP_API_URL=http://localhost:4000
+```
+Run `npm start` to start the application on [http://localhost:3000](http://localhost:3000)
+ in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Deploying to Heroku
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run `npm run build` to create a production `build` directory.
 
-## Learn More
+Set up Config Vars for environment variables under "Settings" in your Heroku app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a remote aimed at your heroku-ui app; this can be done via the [Heroku CLI tool](https://devcenter.heroku.com/articles/git)
+ though you will need to rename it to something other than `heroku` to distinguish it from the API remote:
+```bash
+heroku git:remote -a <your-app-name>
+git remote rename heroku heroku-ui
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Or do it via git if you have the Heroku git URI for your app:
+```bash
+git remote add heroku-ui <your-heroku-app-git-repo-uri>
+```
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then push using the [subtree strategy](https://gist.github.com/SKempin/b7857a6ff6bddb05717cc17a44091202)
+ to deploy only the UI directory:
+```bash
+git subtree push --prefix ui heroku-ui master
+```
