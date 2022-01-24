@@ -3,7 +3,6 @@ api/.env
 api/node_modules
 
 # UI
-ui/build
 ui/.env
 ui/node_modules
 
