@@ -13,7 +13,6 @@ const PhoneNumberForm = ({ onSendClick, isInvalidNumber = false, }) => {
         <form>
             <Container>
                 <InputMask className="phone-number-input" mask="(999) 999-9999" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
-                {/* <input className="phone-number-input" type="tel" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} /> */}
                 {isInvalidNumber && <div className="invalid-number">Phone number is invalid.</div> }
                 <BasicButton buttonTitle="Send" clickFunction={() => onSendClick(phoneNumber)} />
             </Container>
