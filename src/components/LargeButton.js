@@ -12,7 +12,7 @@ const LargeButton = ({ buttonTitle, clickFunction }) => {
 
 LargeButton.propTypes = {
     buttonTitle: PropTypes.string.isRequired,
-    clickFunction: PropTypes.string
+    clickFunction: PropTypes.func,
 }
 
 export default LargeButton;
