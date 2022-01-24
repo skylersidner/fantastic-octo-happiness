@@ -1,5 +1,5 @@
 import './Success.css'
-import Container from "./Container";
+import { Container } from "../components";
 
 const Success = () => {
     return (

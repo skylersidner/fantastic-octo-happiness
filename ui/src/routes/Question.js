@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import './Question.css';
-import Container from './Container';
-import BasicButton from './BasicButton';
+import { BasicButton, Container } from "../components";
 
 const Question = () => {
     const navigate = useNavigate();

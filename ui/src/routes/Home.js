@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 
 import './Home.css';
-import LargeButton from "./LargeButton";
-import Container from './Container';
+import { Container, LargeButton } from "../components";
 
 const Home = () => {
     const naviate = useNavigate();
 
-    const onYesClick = () => {
+    const onYesClick = async () => {
         naviate('/question');
     }
+
     return (
         <Container>
             <h1>Acme Ice Cream</h1>

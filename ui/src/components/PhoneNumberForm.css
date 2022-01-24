@@ -1,0 +1,9 @@
+.phone-number-input {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+.invalid-number {
+    font-style: italic;
+    margin-top: -14px;
+    margin-bottom: 14px;
+}

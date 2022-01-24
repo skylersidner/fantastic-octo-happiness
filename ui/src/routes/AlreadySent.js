@@ -1,5 +1,5 @@
 import './AlreadySent.css';
-import Container from "./Container";
+import { Container } from "../components";
 
 const AlreadySent = () => {
     return (
